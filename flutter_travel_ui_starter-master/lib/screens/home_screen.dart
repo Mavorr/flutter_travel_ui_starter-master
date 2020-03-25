@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_travel_ui_starter/widgets/destination_carosel.dart';
+import 'package:flutter_travel_ui_starter/widgets/restaurants_carousel.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -54,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(left: 20.0, right: 120.0),
-              child: Text('What would you like to see?', style: TextStyle(
+              child: Text('What would you like to see in Warsaw?', style: TextStyle(
                 fontSize: 30.0,
                 fontWeight: FontWeight.bold,
               ),
@@ -71,8 +72,10 @@ class _HomeScreenState extends State<HomeScreen> {
               )
                   .toList(),
             ),
-            SizedBox(height: 20.0,),
+            SizedBox(height: 20.0),
             DestinationCarousel(),
+            SizedBox(height: 20.0),
+            RestaurantsCarousel(),
 
           ],
         ),

@@ -114,7 +114,10 @@ class _DestinationScreenState extends State<DestinationScreen> {
                     ),
                     child: Column(children: <Widget>[
                       Row(children: <Widget>[
-                        Text(activity.name)
+                        Flexible(
+                          child: Text(activity.name),
+                        )
+
                       ],
                       ),
                       SizedBox(height: 10.0),

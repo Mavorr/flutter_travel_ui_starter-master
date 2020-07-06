@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_travel_ui_starter/models/activity_model.dart';
 import 'package:flutter_travel_ui_starter/models/destination_model.dart';
+import 'package:flutter_travel_ui_starter/widgets/googlemaps_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DestinationScreen extends StatefulWidget {
@@ -51,7 +52,8 @@ class _DestinationScreenState extends State<DestinationScreen> {
                 color: Colors.black,
                 onPressed: () => Navigator.pop(context),
               ),
-            ],),
+            ],
+              ),
           ),
           Positioned(
             left: 20.0,
@@ -91,13 +93,23 @@ class _DestinationScreenState extends State<DestinationScreen> {
           Positioned(
             right: 20.0,
             bottom: 20.0,
-            child: Icon(
-              Icons.location_on,
+            child:  Row(children: <Widget>[
+              IconButton(
+    icon: Icon(Icons.location_on),
               color: Colors.white70,
-              size: 25.0,
+              iconSize: 25.0,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Map()),
+                );
+              },
             ),
+    ],
+          ),
           ),
         ],
+
         ),
         Expanded(
           child: ListView.builder(

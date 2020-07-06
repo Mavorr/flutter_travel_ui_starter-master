@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_travel_ui_starter/models/activity_model.dart';
 import 'package:flutter_travel_ui_starter/models/destination_model.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
+import 'package:flutter_travel_ui_starter/widgets/googlemaps_launcher.dart';
+import 'package:flutter_travel_ui_starter/widgets/weather_carosel.dart';
 class DestinationScreen extends StatefulWidget {
 
  final Destination destination;
@@ -48,7 +49,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
               IconButton(
                   icon: Icon(Icons.arrow_back),
                 iconSize: 30.0,
-                color: Colors.black,
+                color: Colors.white,
                 onPressed: () => Navigator.pop(context),
               ),
             ],),
@@ -74,6 +75,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                       FontAwesomeIcons.locationArrow,
                       size: 15.0,
                       color: Colors.white,
+
                     ),
                     SizedBox(width: 5.0),
                     Text(
@@ -91,13 +93,23 @@ class _DestinationScreenState extends State<DestinationScreen> {
           Positioned(
               right: 20.0,
               bottom: 20.0,
-            child: Icon(
-              Icons.location_on,
-              color: Colors.white70,
-              size: 25.0,
+            child:  Row(children: <Widget>[
+              IconButton(
+                icon: Icon(Icons.location_on),
+                color: Colors.white70,
+                iconSize: 25.0,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Map()),
+                  );
+                },
+              ),
+            ],
             ),
           ),
         ],
+
         ),
         Expanded(
           child: ListView.builder(
@@ -107,7 +119,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
               return Stack(
                 children: <Widget>[
                   Container(margin: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
-                    height: 500.0,
+                    height: 600.0,
                     width: double.infinity,
                     decoration: BoxDecoration(color: Colors.white,
                     borderRadius: BorderRadius.circular(20.0)
@@ -145,15 +157,19 @@ class _DestinationScreenState extends State<DestinationScreen> {
                         ),
                       ],
                       ),
+
                     ],
                     ),
                   ),
                 ],
+
               );
-            }
+
+            },
               ),
               ),
               ],
+
     ),
     );
 

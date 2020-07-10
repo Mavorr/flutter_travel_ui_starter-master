@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_travel_ui_starter/models/restaurant_model.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'package:url_launcher/url_launcher.dart';
+
 class RestaurantsCarousel extends StatelessWidget {
+
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -19,14 +23,23 @@ class RestaurantsCarousel extends StatelessWidget {
                 ),
               ),
               GestureDetector(
-                onTap: () => print ('See All'),
+                onTap: () async {
+
+                  const url = 'https://pl.tripadvisor.com/Restaurants-g274856-Warsaw_Mazovia_Province_Central_Poland.html';
+                  if (await canLaunch(url)) {
+                    await launch(url, forceSafariVC: false);
+                  } else {
+                    throw 'Could not launch $url';
+                  }
+                },
                 child: Text(
-                  'See all',
+                  'See All',
                   style: TextStyle(
                     color: Theme.of(context).primaryColor,
                     fontSize: 16.0,
                     fontWeight: FontWeight.w600,
                     letterSpacing: 1.0,
+
 
                   ),
                 ),
@@ -40,7 +53,19 @@ class RestaurantsCarousel extends StatelessWidget {
             itemCount: restaurants.length,
             itemBuilder: (BuildContext context, int index) {
               Restaurant restaurant = restaurants[index];
-              return Container(
+              return GestureDetector(
+                  onTap: () async {
+
+
+                    if (await canLaunch(restaurant.url)) {
+                      await launch(restaurant.url, forceSafariVC: false);
+                    } else {
+                      throw 'Could not launch $restaurant.url';
+                    }
+                  },
+
+
+              child: Container(
                 margin: EdgeInsets.all(10.0),
                 width: 210.0,
                 child: Stack(
@@ -76,7 +101,7 @@ class RestaurantsCarousel extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(height: 2.0),
-                              Text('\$${restaurant.price} / meal', style: TextStyle(
+                              Text('\PLN${restaurant.price} / meal', style: TextStyle(
                                 fontSize: 18.0,
                                 fontWeight: FontWeight.w600,
                               ),)
@@ -110,6 +135,7 @@ class RestaurantsCarousel extends StatelessWidget {
                     ),
                   ],
                 ),
+              ),
               );
             },
           ),

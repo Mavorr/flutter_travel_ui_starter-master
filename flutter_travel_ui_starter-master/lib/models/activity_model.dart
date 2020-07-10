@@ -1,3 +1,5 @@
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
 class Activity {
   String imageUrl;
   String name;
@@ -5,6 +7,8 @@ class Activity {
   List<String> startTimes;
   int rating;
   int price;
+  LatLng location;
+
 
   Activity({
     this.imageUrl,
@@ -13,6 +17,8 @@ class Activity {
     this.startTimes,
     this.rating,
     this.price,
+    this.location,
+
   });
 
 
@@ -24,6 +30,9 @@ class Activity2 {
   List<String> startTimes;
   int rating;
   int price;
+  LatLng location;
+
+
 
   Activity2({
   this.imageUrl,
@@ -32,6 +41,7 @@ class Activity2 {
   this.startTimes,
   this.rating,
   this.price,
+    this.location,
 
 
   });
@@ -45,6 +55,7 @@ class Activity3 {
   List<String> startTimes;
   int rating;
   int price;
+  LatLng location;
 
   Activity3({
     this.imageUrl,
@@ -53,6 +64,7 @@ class Activity3 {
     this.startTimes,
     this.rating,
     this.price,
+    this.location,
 
 
   });
@@ -65,6 +77,7 @@ class Activity3 {
     List<String> startTimes;
     int rating;
     int price;
+    LatLng location;
 
     Activity4({
       this.imageUrl,
@@ -73,6 +86,7 @@ class Activity3 {
       this.startTimes,
       this.rating,
       this.price,
+      this.location,
 
 
     });
@@ -85,6 +99,7 @@ class Activity3 {
     List<String> startTimes;
     int rating;
     int price;
+    LatLng location;
 
     Activity5({
       this.imageUrl,
@@ -93,6 +108,7 @@ class Activity3 {
       this.startTimes,
       this.rating,
       this.price,
+      this.location,
 
 
     });
@@ -105,6 +121,7 @@ class Activity3 {
     List<String> startTimes;
     int rating;
     int price;
+    LatLng location;
 
     Activity6({
       this.imageUrl,
@@ -113,6 +130,7 @@ class Activity3 {
       this.startTimes,
       this.rating,
       this.price,
+      this.location,
 
 
     });
@@ -125,6 +143,7 @@ class Activity3 {
     List<String> startTimes;
     int rating;
     int price;
+    LatLng location;
 
     Activity7({
       this.imageUrl,
@@ -133,6 +152,7 @@ class Activity3 {
       this.startTimes,
       this.rating,
       this.price,
+      this.location,
 
 
     });

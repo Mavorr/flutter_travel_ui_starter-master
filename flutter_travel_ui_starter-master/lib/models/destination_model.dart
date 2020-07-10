@@ -1,12 +1,17 @@
 import 'package:flutter_travel_ui_starter/models/activity_model.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class Destination {
   String imageUrl;
   String city;
   String country;
   String description;
+  String location;
   List<Activity> activities;
-  List<Activity2> activities2;
+  List<Activity> activities2;
+  List<Activity> activities3;
+  List<Activity> activities4;
+
 
 
   Destination({
@@ -15,7 +20,7 @@ class Destination {
     this.country,
     this.description,
     this.activities,
-    this.activities2,
+    this.location,
 
   });
 }
@@ -29,6 +34,7 @@ List<Activity> activities = [
         'Surrounding streets feature medieval architecture such as the city walls, St. John\'s Cathedral and the Barbican which links the Old Town with Warsaw New Town.',
     type: 'Sightseeing Tour',
     startTimes: ['00:00 am', '12:00 pm'],
+
   ),
 
 ];
@@ -63,64 +69,19 @@ List<Activity> activities3 = [
 ];
 List<Activity> activities4 = [
   Activity(
-    imageUrl: 'assets/images/lazienki.jpg',
-    name: 'Łazienki Park or Royal Baths Park (Polish: Park Łazienkowski, Łazienki Królewskie) is the largest park in Warsaw, Poland,'
-        ' occupying 76 hectares of the city center.'
-        ' The park-and-palace complex lies in Warsaw\'s central district (Śródmieście) on Ujazdów Avenue,'
-        ' which is part of the Royal Route linking the Royal Castle with Wilanów Palace to the south. North of Łazienki Park, on the other side of Agrykola Street, stands Ujazdów Castle.'
-        ' Originally designed in the 17th century as a baths park for nobleman Stanisław Herakliusz Lubomirski, in the 18th century Łazienki was transformed by Poland\'s last monarch, Stanisław II Augustus, into a setting for palaces, villas, classicist follies, and monuments. In 1918 it was officially designated a public park.'
-        ' Łazienki is visited by tourists from all over Poland and the world, and serves as a venue for music, the arts, and culture. The park is also home to peacocks and a large number of squirrels.',
+    imageUrl: 'assets/images/palack.jpg',
+    name: 'Palace of Culture and Science (Pałac Kultury i Nauki; abbreviated PKiN), is a notable high-rise building in central Warsaw, Poland.'
+        'With a total height of 237 metres (778 ft) it is the tallest building in Poland, the 5th-tallest building in the European Union (including spire) and one of the tallest on the European continent. '
+        'Constructed in 1955, it houses various public and cultural institutions such as cinemas, theatres, libraries, sports clubs, university faculties and authorities of the Polish Academy of Sciences. '
+        'Since 2007 it has been enlisted in the Registry of Objects of Cultural Heritage.',
     type: 'Sightseeing Tour',
     startTimes: ['00:00 am', '12:00 pm'],
   ),
 
 ];
-List<Activity> activities5 = [
-  Activity(
-    imageUrl: 'assets/images/lazienki.jpg',
-    name: 'Łazienki Park or Royal Baths Park (Polish: Park Łazienkowski, Łazienki Królewskie) is the largest park in Warsaw, Poland,'
-        ' occupying 76 hectares of the city center.'
-        ' The park-and-palace complex lies in Warsaw\'s central district (Śródmieście) on Ujazdów Avenue,'
-        ' which is part of the Royal Route linking the Royal Castle with Wilanów Palace to the south. North of Łazienki Park, on the other side of Agrykola Street, stands Ujazdów Castle.'
-        ' Originally designed in the 17th century as a baths park for nobleman Stanisław Herakliusz Lubomirski, in the 18th century Łazienki was transformed by Poland\'s last monarch, Stanisław II Augustus, into a setting for palaces, villas, classicist follies, and monuments. In 1918 it was officially designated a public park.'
-        ' Łazienki is visited by tourists from all over Poland and the world, and serves as a venue for music, the arts, and culture. The park is also home to peacocks and a large number of squirrels.',
-    type: 'Sightseeing Tour',
-    startTimes: ['00:00 am', '12:00 pm'],
-  ),
-
-];
-List<Activity> activities6 = [
-  Activity(
-    imageUrl: 'assets/images/lazienki.jpg',
-    name: 'Łazienki Park or Royal Baths Park (Polish: Park Łazienkowski, Łazienki Królewskie) is the largest park in Warsaw, Poland,'
-        ' occupying 76 hectares of the city center.'
-        ' The park-and-palace complex lies in Warsaw\'s central district (Śródmieście) on Ujazdów Avenue,'
-        ' which is part of the Royal Route linking the Royal Castle with Wilanów Palace to the south. North of Łazienki Park, on the other side of Agrykola Street, stands Ujazdów Castle.'
-        ' Originally designed in the 17th century as a baths park for nobleman Stanisław Herakliusz Lubomirski, in the 18th century Łazienki was transformed by Poland\'s last monarch, Stanisław II Augustus, into a setting for palaces, villas, classicist follies, and monuments. In 1918 it was officially designated a public park.'
-        ' Łazienki is visited by tourists from all over Poland and the world, and serves as a venue for music, the arts, and culture. The park is also home to peacocks and a large number of squirrels.',
-    type: 'Sightseeing Tour',
-    startTimes: ['00:00 am', '12:00 pm'],
-  ),
-
-];
-List<Activity> activities7 = [
-  Activity(
-    imageUrl: 'assets/images/lazienki.jpg',
-    name: 'Łazienki Park or Royal Baths Park (Polish: Park Łazienkowski, Łazienki Królewskie) is the largest park in Warsaw, Poland,'
-        ' occupying 76 hectares of the city center.'
-        ' The park-and-palace complex lies in Warsaw\'s central district (Śródmieście) on Ujazdów Avenue,'
-        ' which is part of the Royal Route linking the Royal Castle with Wilanów Palace to the south. North of Łazienki Park, on the other side of Agrykola Street, stands Ujazdów Castle.'
-        ' Originally designed in the 17th century as a baths park for nobleman Stanisław Herakliusz Lubomirski, in the 18th century Łazienki was transformed by Poland\'s last monarch, Stanisław II Augustus, into a setting for palaces, villas, classicist follies, and monuments. In 1918 it was officially designated a public park.'
-        ' Łazienki is visited by tourists from all over Poland and the world, and serves as a venue for music, the arts, and culture. The park is also home to peacocks and a large number of squirrels.',
-    type: 'Sightseeing Tour',
-    startTimes: ['00:00 am', '12:00 pm'],
-  ),
 
 
 
-
-
-];
 
 
 List<Destination> destinations = [
@@ -129,6 +90,7 @@ List<Destination> destinations = [
     city: 'Old Town',
     country: '',
     description: 'Visit Warsaw Old Town the oldest part of Warsaw.',
+    location: 'https://goo.gl/maps/XUBCype4nrscHiXd7',
     activities: activities,
   ),
   Destination(
@@ -136,6 +98,7 @@ List<Destination> destinations = [
     city: 'Royal Baths Park',
     country: '',
     description: 'Visit Royal Baths the largest park in Warsaw.',
+    location: 'https://goo.gl/maps/YFBPvhAY5teiiec2A',
     activities: activities2,
   ),
   Destination(
@@ -143,34 +106,16 @@ List<Destination> destinations = [
     city: 'The Warsaw Uprising',
     country: '',
     description: 'The Museum is dedicated to the Warsaw Uprising of 1944.',
+    location: 'https://goo.gl/maps/qRK9Ji7Uw2SNXk3V9',
     activities: activities3,
   ),
   Destination(
-    imageUrl: 'assets/images/saopaulo.jpg',
-    city: 'Sao Paulo',
-    country: 'Brazil',
-    description: 'Visit Sao Paulo for an amazing and unforgettable adventure.',
+    imageUrl: 'assets/images/palack.jpg',
+    city: 'Palace of Culture',
+    country: '',
+    description: 'Palace of Culture and Science, is a notable high-rise building.',
+    location: 'https://goo.gl/maps/tVLnFDUnpAbSAR1K9',
     activities: activities4,
   ),
-  Destination(
-    imageUrl: 'assets/images/newyork.jpg',
-    city: 'New York City',
-    country: 'United States',
-    description: 'Visit New York for an amazing and unforgettable adventure.',
-    activities: activities5,
-  ),
-  Destination(
-    imageUrl: 'assets/images/newyork.jpg',
-    city: 'New York City',
-    country: 'United States',
-    description: 'Visit New York for an amazing and unforgettable adventure.',
-    activities: activities6,
-  ),
-  Destination(
-    imageUrl: 'assets/images/newyork.jpg',
-    city: 'New York City',
-    country: 'United States',
-    description: 'Visit New York for an amazing and unforgettable adventure.',
-    activities: activities7,
-  ),
+
 ];

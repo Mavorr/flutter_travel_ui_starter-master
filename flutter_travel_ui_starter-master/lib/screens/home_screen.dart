@@ -13,8 +13,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   int _selectedIndex =0;
   List<IconData> icons = [
-    FontAwesomeIcons.archway,
-    FontAwesomeIcons.drumstickBite,
+ //   FontAwesomeIcons.archway,
+  //  FontAwesomeIcons.drumstickBite,
 
 
 

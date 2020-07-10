@@ -3,7 +3,9 @@ import 'package:flutter_travel_ui_starter/models/activity_model.dart';
 import 'package:flutter_travel_ui_starter/models/destination_model.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_travel_ui_starter/widgets/googlemaps_launcher.dart';
-import 'package:flutter_travel_ui_starter/widgets/weather_carosel.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+
 class DestinationScreen extends StatefulWidget {
 
  final Destination destination;
@@ -71,10 +73,23 @@ class _DestinationScreenState extends State<DestinationScreen> {
                 ),
                 Row(
                   children: <Widget>[
-                    Icon(
-                      FontAwesomeIcons.locationArrow,
-                      size: 15.0,
+                    IconButton(
+                      icon: Icon(FontAwesomeIcons.locationArrow),
+                      iconSize: 20.0,
                       color: Colors.white,
+                      onPressed: () async {
+                        final String googleMapsUrl = (widget.destination.location);
+                        //final String appleMapsUrl = "https://maps.apple.com/?q=$lat,$lng";
+
+                        if (await canLaunch(googleMapsUrl)) {
+                          await launch(googleMapsUrl);
+                        }
+                        if (await canLaunch(widget.destination.location)) {
+                          await launch(widget.destination.location, forceSafariVC: false);
+                        } else {
+                          throw "Couldn't launch URL";
+                        }
+                      },
 
                     ),
                     SizedBox(width: 5.0),
@@ -97,7 +112,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
               IconButton(
                 icon: Icon(Icons.location_on),
                 color: Colors.white70,
-                iconSize: 25.0,
+                iconSize: 35.0,
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -119,7 +134,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
               return Stack(
                 children: <Widget>[
                   Container(margin: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
-                    height: 600.0,
+                    height: 350.0,
                     width: double.infinity,
                     decoration: BoxDecoration(color: Colors.white,
                     borderRadius: BorderRadius.circular(20.0)

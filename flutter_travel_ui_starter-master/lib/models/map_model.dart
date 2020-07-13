@@ -47,4 +47,19 @@ final List<Destination> destination = [
       thumbNail: 'assets/images/palack.jpg'
   ),
 
+  Destination(
+      shopName: 'POLIN Museum',
+      address: 'Mordechaja Anielewicza 6',
+      description: 'Museum of the History of Polish Jews.',
+      locationCoords: LatLng(52.249444, 20.992778),
+      thumbNail: 'assets/images/jewmuseum.jpg'
+  ),
+  Destination(
+      shopName: 'Wilanów Palace',
+      address: 'Wilanów Królewski, 01-001 Warsaw',
+      description: 'Royal palace located in the Wilanów district, Warsaw.',
+      locationCoords: LatLng(52.165278, 21.090278),
+      thumbNail: 'assets/images/WilanowPalace.jpg'
+  ),
+
 ];

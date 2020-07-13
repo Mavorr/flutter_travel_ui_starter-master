@@ -11,6 +11,8 @@ class Destination {
   List<Activity> activities2;
   List<Activity> activities3;
   List<Activity> activities4;
+  List<Activity> activities5;
+  List<Activity> activities6;
 
 
 
@@ -48,7 +50,7 @@ List<Activity> activities2 = [
         ' Originally designed in the 17th century as a baths park for nobleman Stanisław Herakliusz Lubomirski, in the 18th century Łazienki was transformed by Poland\'s last monarch, Stanisław II Augustus, into a setting for palaces, villas, classicist follies, and monuments. In 1918 it was officially designated a public park.'
         ' Łazienki is visited by tourists from all over Poland and the world, and serves as a venue for music, the arts, and culture. The park is also home to peacocks and a large number of squirrels.',
     type: 'Sightseeing Tour',
-    startTimes: ['00:00 am', '12:00 pm'],
+    startTimes: ['06:00 am', '9:30 pm'],
   ),
 
 
@@ -63,7 +65,7 @@ List<Activity> activities3 = [
     'Its director is Jan Ołdakowski, with historian Dariusz Gawin from the Polish Academy of Sciences as his deputy.'
         'The museum is a member organisation of the Platform of European Memory and Conscience.',
     type: 'Sightseeing Tour',
-    startTimes: ['00:00 am', '12:00 pm'],
+    startTimes: ['10:00 am', '18:00 pm'],
   ),
 
 ];
@@ -75,7 +77,33 @@ List<Activity> activities4 = [
         'Constructed in 1955, it houses various public and cultural institutions such as cinemas, theatres, libraries, sports clubs, university faculties and authorities of the Polish Academy of Sciences. '
         'Since 2007 it has been enlisted in the Registry of Objects of Cultural Heritage.',
     type: 'Sightseeing Tour',
-    startTimes: ['00:00 am', '12:00 pm'],
+    startTimes: ['10:00 am', '8:00 pm'],
+  ),
+
+];
+
+List<Activity> activities5 = [
+  Activity(
+    imageUrl: 'assets/images/jewmuseum.jpg',
+    name: 'POLIN Museum of the History of Polish Jews (Polish: Muzeum Historii Żydów Polskich) is a museum on the site of the former Warsaw Ghetto. '
+        'The Hebrew word Polin in the museum\'s English name means either "Poland" or "rest here" and relates to a legend about the arrival of the first Jews to Poland.'
+        'The museum\'s cornerstone was laid in 2007, and the museum opened on 19 April 2013. The core exhibition opened in October 2014 and features a multimedia exhibition about the Jewish community that flourished in Poland for a thousand years up to the World War II Holocaust.'
+        'The building, a postmodern structure in glass, copper, and concrete, was designed by Finnish architects Rainer Mahlamäki and Ilmari Lahdelma.',
+    type: 'Sightseeing Tour',
+    startTimes: ['10:00 am', '6:00 pm'],
+  ),
+
+];
+
+List<Activity> activities6 = [
+  Activity(
+    imageUrl: 'assets/images/WilanowPalace.jpg',
+    name: 'Wilanów Palace  is a royal palace located in the Wilanów district, Warsaw. Wilanów Palace survived Poland\'s partitions and both World Wars, and so serves as a reminder of the culture of the Polish state as it was before the misfortunes of the 18th century.'
+        'It is one of Poland\'s most important monuments. The Palace\'s museum, established in 1805, is a repository of the country\'s royal and artistic heritage and receives around 3 million visitors annually. The palace and park in Wilanów hosts cultural events and concerts, including Summer Royal Concerts in the Rose Garden and the International Summer Early Music Academy.'
+        'The palace, together with other elements of Warsaw Old Town, is one of Poland\'s official national Historic Monuments (Pomnik historii), as designated on 16th September 1994. Its listing is maintained by the National Heritage Board of Poland.'
+        'Since 2006, the palace has been a member of the international association of European Royal Residences.',
+    type: 'Sightseeing Tour',
+    startTimes: ['9:30 am', '9:00 pm'],
   ),
 
 ];
@@ -116,6 +144,24 @@ List<Destination> destinations = [
     description: 'Palace of Culture and Science, is a notable high-rise building.',
     location: 'https://goo.gl/maps/tVLnFDUnpAbSAR1K9',
     activities: activities4,
+  ),
+
+  Destination(
+    imageUrl: 'assets/images/jewmuseum.jpg',
+    city: 'POLIN Museum',
+    country: '',
+    description: 'Museum of the History of Polish Jews.',
+    location: 'https://goo.gl/maps/8wThKLuGjtNrT8y17',
+    activities: activities5,
+  ),
+
+  Destination(
+    imageUrl: 'assets/images/WilanowPalace.jpg',
+    city: 'Wilanów Palace',
+    country: '',
+    description: 'Royal palace located in the Wilanów district, Warsaw',
+    location: 'https://goo.gl/maps/J61EXik8r5acLoWa9',
+    activities: activities6,
   ),
 
 ];

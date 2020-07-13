@@ -134,7 +134,6 @@ class _DestinationScreenState extends State<DestinationScreen> {
               return Stack(
                 children: <Widget>[
                   Container(margin: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
-                    height: 350.0,
                     width: double.infinity,
                     decoration: BoxDecoration(color: Colors.white,
                     borderRadius: BorderRadius.circular(20.0)
@@ -142,32 +141,46 @@ class _DestinationScreenState extends State<DestinationScreen> {
                     child: Column(children: <Widget>[
                       Row(children: <Widget>[
                         Flexible(
-                          child: Text(activity.name),
-                        )
-
+                          child: Padding(
+                            padding: EdgeInsets.all(16.0),
+                      child: Text(activity.name,
+                        style: TextStyle(color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            letterSpacing: 1.1,
+                            decorationStyle: TextDecorationStyle.wavy
+                        ),
+                      ),
+                        ),
+                        ),
                       ],
                       ),
-                      SizedBox(height: 10.0),
+                      SizedBox(height: 15.0),
                       Row(children: <Widget>[
-                        Container(
+
+                        Container(margin: EdgeInsets.fromLTRB(16.0, 5.0, 16.0, 5.0),
                           width: 70.0,
                                 decoration: BoxDecoration(color: Theme.of(context).accentColor,
                                   borderRadius: BorderRadius.circular(10.0),
+
                                 ),
+
                           alignment: Alignment.center,
                           child: Text(
-                            activity.startTimes[0],
+                            activity.startTimes[0], style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 15, ),
                           ),
                         ),
-                        SizedBox(width: 10.0),
+                        SizedBox(width: 15.0),
+
                         Container(
                           width: 70.0,
                           decoration: BoxDecoration(color: Theme.of(context).accentColor,
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           alignment: Alignment.center,
+
                           child: Text(
-                            activity.startTimes[1],
+                            activity.startTimes[1],  style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 15,),
                           ),
                         ),
                       ],

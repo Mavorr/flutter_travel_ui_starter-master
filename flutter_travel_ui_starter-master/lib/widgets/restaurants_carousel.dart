@@ -16,7 +16,7 @@ class RestaurantsCarousel extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Text('Recommended Restaurants',
+              Text('Restaurants',
                 style: TextStyle(fontSize: 22.0,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1.0,

@@ -1,4 +1,4 @@
-package com.example.flutter_travel_ui_starter
+package m.kasperski.com.Warsaw.guide
 
 import android.os.Bundle
 
